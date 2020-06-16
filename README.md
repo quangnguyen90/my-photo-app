@@ -135,4 +135,5 @@ React Stacks
   - Validation form
     - yup: validate field (npm i --save yup)
   - For redux
-    - Redux toolkit
+    - Redux toolkit (npm i --save @reduxjs/toolkit)
+    - Redux (npm i --save react-redux)
