@@ -120,6 +120,9 @@ Formik
 
 Yup
 
+## Demo
+  - photo-app-quangnguyen.surge.sh
+
 ## Tech Stack Summary
 React Stacks
   - Relative Import
@@ -137,3 +140,7 @@ React Stacks
   - For redux
     - Redux toolkit (npm i --save @reduxjs/toolkit)
     - Redux (npm i --save react-redux)
+  - Deploy with surge
+    - surge (npm i -g surge)
+    - npm run build
+    - sh deploy-surge.sh (or npm run deploy)
