@@ -43,7 +43,7 @@ function RandomPhoto(props) {
                     onClick={handleRandomPhotoClick}
                 >
                     Random a photo
-        </Button>
+                </Button>
             </div>
 
             <div className="random-photo__photo">

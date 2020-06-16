@@ -87,7 +87,7 @@ function InputField(props) {
     type, label, placeholder, disabled,
   } = props;
   const { name } = field;
-
+  // const { name, value, onChange, onBlur } = field;
   return (
     <FormGroup>
       {label && <Label for={name}>{label}</Label>}
@@ -119,3 +119,20 @@ RandomPhotoField
 Formik
 
 Yup
+
+## Tech Stack Summary
+React Stacks
+  - Relative Import
+    - jsconfig.json
+  - Router
+    - react router dom (npm i --save react-router-dom)
+  - Design UI
+    - bootstrap (npm i --save bootstrap)
+    - reactstrap (npm i --save reactstrap)
+    - formik: custom field (npm i --save formik)
+    - react-select (npm i --save react-select)
+    - scss (npm i --save-dev node-sass)
+  - Validation form
+    - yup: validate field (npm i --save yup)
+  - For redux
+    - Redux toolkit
