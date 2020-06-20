@@ -121,7 +121,7 @@ Formik
 Yup
 
 ## Demo
-  - photo-app-quangnguyen.surge.sh
+  - http://photo-app-quangnguyen.surge.sh
 
 ## Tech Stack Summary
 React Stacks
