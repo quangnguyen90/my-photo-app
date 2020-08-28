@@ -32,6 +32,16 @@ function Header() {
                             My Redux Photo App
                         </NavLink>
                     </Col>
+                    <Col xs="auto">
+                        <NavLink
+                            exact
+                            className="header__link"
+                            to="/sign-in"
+                            activeClassName="header__link--active"
+                        >
+                            Signin
+                        </NavLink>
+                    </Col>
                 </Row>
             </Container>
         </header>
