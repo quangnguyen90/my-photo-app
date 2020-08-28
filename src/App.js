@@ -6,6 +6,7 @@ import NotFound from './components/NotFound';
 import productApi from 'api/productApi';
 import SignIn from 'features/Auth/pages/SignIn';
 import firebase from 'firebase';
+import { Button } from 'reactstrap';
 
 // Lazy load - Code splitting
 const Photo = React.lazy(() => import('./features/Photo'));
@@ -56,11 +57,26 @@ function App() {
     return () => unregisterAuthObserver();
   }, [])
 
+  const handeButtonClick = async () => {
+    try {
+      const params = {
+        _page: 1,
+        _limt: 10,
+      };
+      const response = await productApi.getAll(params);
+      console.log(response);
+    } catch (error) {
+      console.log('Failed to fetch product list: ', error);
+    }
+  }
+
   return (
     <div className="photo-app">
       <Suspense fallback={<div>Loading ...</div>}>
         <BrowserRouter>
           <Header />
+
+          <Button onClick={handeButtonClick}>Fetch Product List</Button>
 
           <Switch>
             <Redirect exact from="/" to="/photos" />
