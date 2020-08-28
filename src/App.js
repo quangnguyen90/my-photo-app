@@ -20,7 +20,7 @@ firebase.initializeApp(config);
 
 function App() {
   const [productList, setProductList] = useState([]);
-  
+
   useEffect(() => {
     const fetchProductList = async () => {
       try {
@@ -48,9 +48,9 @@ function App() {
         return;
       }
 
-      console.log('logged in user', user.displayName);
-      const token = await user.getIdToken();
-      console.log('logged in user token', token);
+      // console.log('[APP] logged in user', user.displayName);
+      // const token = await user.getIdToken();
+      // console.log('[APP] logged in user token', token);
     });
 
     // ComponentWillUnmount
