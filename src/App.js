@@ -7,6 +7,9 @@ import productApi from 'api/productApi';
 import SignIn from 'features/Auth/pages/SignIn';
 import firebase from 'firebase';
 import { Button } from 'reactstrap';
+import { useDispatch } from 'react-redux';
+import { unwrapResult } from '@reduxjs/toolkit';
+import { getMe } from 'app/userSlice';
 
 // Lazy load - Code splitting
 const Photo = React.lazy(() => import('./features/Photo'));
@@ -20,6 +23,7 @@ firebase.initializeApp(config);
 
 function App() {
   const [productList, setProductList] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchProductList = async () => {
@@ -46,6 +50,17 @@ function App() {
         // users logs out, handle something here
         console.log('User is not logged in');
         return;
+      }
+
+      // Get me when signed in 
+      // const action = getMe();
+      try {
+        const actionResult = await dispatch(getMe());
+        const currentUser = unwrapResult(actionResult);
+        console.log('Logged in user: ', currentUser);
+      } catch (error) {
+        console.log('Fail to login ', error.message);
+        // show toast error
       }
 
       // console.log('[APP] logged in user', user.displayName);
